@@ -1,0 +1,179 @@
+name: Publish SpaceDonkey Why page once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publish-why-once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish Why to GitHub Wiki
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git"
+          tmp="$(mktemp -d)"
+          git clone "$remote" "$tmp/wiki"
+
+          cat > "$tmp/wiki/Why.md" <<'EOF'
+          # Why
+
+          Human civilization is still running on a temporary geological inheritance.
+
+          We dig up ancient stored energy, burn it faster than nature replaced it, build almost every system around the assumption that this flow will remain cheap and available, and then call the resulting arrangement *normal*. Oil shaped our cities, logistics, agriculture, militaries, trade, and expectations of growth. Even compute ultimately cashes out in energy and physical infrastructure.
+
+          We mistook a windfall for a law of nature.
+
+          At the same time, we inherited another set of presumptions about physics and engineering: that escaping Earth must mean carrying an enormous amount of reaction mass; that orbital transport is fundamentally a sequence of heroic launches; that giant reusable planetary infrastructure is somehow less realistic than continually throwing exquisitely engineered explosives into the sky.
+
+          Some of those assumptions are physics.
+
+          Some are engineering conventions.
+
+          Some are economics.
+
+          Some are just **things everybody got used to believing were the same thing**.
+
+          SpaceDonkey exists to pull them apart.
+
+          ## Manifest destiny, but bigger
+
+          There is an enormous amount of deserved historical ugliness attached to the phrase *manifest destiny*. We are using the underlying impulse at a different scale:
+
+          **Humanity should not remain confined to one fragile planetary basin.**
+
+          Not because Earth is disposable.
+
+          Because Earth is irreplaceable.
+
+          A civilization with one biosphere, one gravity well, one tightly coupled industrial ecology, and increasingly powerful technology has very little slack. When every mistake, war, shortage, ecological failure, and technological accident happens inside the same closed habitat, resilience eventually becomes a geometry problem.
+
+          We need somewhere else to go.
+
+          More importantly, we need the **capacity to go**.
+
+          ## Energy is destiny
+
+          States, economies, factories, farms, datacenters, transportation networks: they all require flow.
+
+          We can improve efficiency. We can build nuclear. We can electrify. We can use solar, wind, storage, geothermal, and technologies we have not invented yet.
+
+          Good.
+
+          But none of those changes the deeper problem that an expanding technological civilization continually discovers new things worth spending energy on.
+
+          Energy abundance does not end demand. It creates new reachable states.
+
+          So the long-term question cannot only be:
+
+          > How do we ration one planet more intelligently?
+
+          It also has to become:
+
+          > **How do we increase humanity's reachable physical world?**
+
+          ## We may be wrong about what is hard
+
+          Spaceflight has accumulated its own local basin.
+
+          Rocket equations are real. Orbital mechanics are real. Conservation laws are real.
+
+          But **“therefore rockets are the natural permanent interface between a planetary civilization and space”** does not follow from any conservation law.
+
+          That is an architecture.
+
+          Architectures can change.
+
+          Orbit is not primarily *up*. It is sideways.
+
+          A payload does not care whether its orbital energy arrived from one engine, ten engines, a rotating tether, a powered swing, a kilometer of electromagnetic machinery, or a thousand small exchanges distributed around a planet.
+
+          Physics keeps the ledger.
+
+          It does not prescribe the business model.
+
+          That distinction matters.
+
+          ## The wager
+
+          SpaceDonkey makes a very simple wager:
+
+          > A transition that looks absurd as one global move may become ordinary when decomposed into enough locally permitted moves.
+
+          Do not demand that one machine perform the miracle.
+
+          Build infrastructure that leaves another reachable handle.
+
+          Grab.
+
+          Accelerate.
+
+          Release.
+
+          Coast.
+
+          Grab again.
+
+          Keep accumulating energy and angular momentum until the final release does not come back down.
+
+          Maybe the ring fails.
+
+          Maybe the materials fail.
+
+          Maybe atmospheric drag murders the lower Donkeys.
+
+          Maybe reliability kills a thousand-stage network.
+
+          Those are engineering questions, and reality gets to answer them.
+
+          But **“we have always launched this way” is not an answer.**
+
+          ## Swing to safety
+
+          SpaceDonkey is therefore not fundamentally about building a funny space elevator.
+
+          It is about refusing a false endpoint.
+
+          Humanity has spent several centuries converting a finite inheritance into extraordinary capability. That capability now gives us both unprecedented power and unprecedented ways to damage the only habitat we possess.
+
+          The answer cannot be to stop becoming capable.
+
+          It has to include becoming **less trapped**.
+
+          More energy.
+
+          More territory.
+
+          More redundancy.
+
+          More reachable states.
+
+          More places for civilization to survive its own mistakes.
+
+          We do not know whether SpaceDonkey is one of the mechanisms that gets us there.
+
+          But we know what direction we need to search.
+
+          > **We need to swing to safety.**
+          EOF
+
+          # Strip the heredoc indentation introduced by YAML for clean Markdown.
+          sed -i 's/^          //' "$tmp/wiki/Why.md"
+
+          if [ -f "$tmp/wiki/_Sidebar.md" ] && ! grep -Fq '[Why](Why)' "$tmp/wiki/_Sidebar.md"; then
+            printf '\n- [Why](Why)\n' >> "$tmp/wiki/_Sidebar.md"
+          fi
+
+          cd "$tmp/wiki"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Why.md _Sidebar.md 2>/dev/null || git add Why.md
+          git commit -m "Add Why"
+          git push origin HEAD
