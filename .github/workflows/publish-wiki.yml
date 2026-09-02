@@ -1,0 +1,56 @@
+name: Publish wiki
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "wiki/**"
+      - ".github/workflows/publish-wiki.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-wiki
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v4
+
+      - name: Publish wiki directory
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          if [ ! -d wiki ]; then
+            echo "wiki/ directory does not exist"
+            exit 1
+          fi
+
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git"
+          workdir="$(mktemp -d)"
+
+          git clone "$remote" "$workdir/wiki"
+
+          find "$workdir/wiki" -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a wiki/. "$workdir/wiki/"
+
+          cd "$workdir/wiki"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "Wiki already up to date"
+            exit 0
+          fi
+
+          git commit -m "Sync wiki from ${GITHUB_SHA}"
+          git push origin HEAD
