@@ -18,14 +18,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          base64 -d assets/donkey-this-ass-to-space.webp.b64 > assets/donkey-this-ass-to-space.webp
+          cat .blob-staging/part-*.txt | base64 -d > assets/donkey-this-ass-to-space.webp
           echo '42355fbaa5576e10b396bf0076bc8bb8f5bd3d3076290c6ea16cc02ea5a496b8  assets/donkey-this-ass-to-space.webp' | sha256sum -c -
           cat > README.md <<'EOF'
           <a href="https://github.com/PaulTiffany/SpaceDonkey/wiki">
             <img src="assets/donkey-this-ass-to-space.webp" alt="Donkey This Ass To Space" width="100%">
           </a>
           EOF
-          rm -f assets/donkey-this-ass-to-space.webp.b64 .blob-staging/READY
+          rm -f .blob-staging/part-*.txt .blob-staging/READY assets/donkey-this-ass-to-space.webp.b64
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
