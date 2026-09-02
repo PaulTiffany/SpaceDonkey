@@ -1,0 +1,29 @@
+name: Import SpaceDonkey hero
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.blob-staging/READY'
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reconstruct hero asset
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+          cat .blob-staging/part-*.txt | base64 -d > assets/donkey-this-ass-to-space.webp
+          echo 'd8c99479c456acebed122fd4add43c131e1f739d83af8e6bf204040332dd64d8  assets/donkey-this-ass-to-space.webp' | sha256sum -c -
+          rm -f .blob-staging/part-*.txt .blob-staging/READY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Add generated SpaceDonkey hero [skip ci]'
+          git push
