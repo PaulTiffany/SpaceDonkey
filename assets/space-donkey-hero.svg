@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <defs>
+    <linearGradient id="space" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#02020f"/>
+      <stop offset="1" stop-color="#071b3d"/>
+    </linearGradient>
+    <linearGradient id="earth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2dc7ff"/>
+      <stop offset="0.55" stop-color="#0c5cb8"/>
+      <stop offset="1" stop-color="#052f64"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="520" fill="url(#space)"/>
+  <g fill="#fff" opacity=".9">
+    <rect x="74" y="60" width="3" height="3"/><rect x="190" y="110" width="2" height="2"/>
+    <rect x="325" y="45" width="3" height="3"/><rect x="440" y="92" width="2" height="2"/>
+    <rect x="565" y="34" width="2" height="2"/><rect x="700" y="82" width="3" height="3"/>
+    <rect x="845" y="50" width="2" height="2"/><rect x="1000" y="100" width="3" height="3"/>
+    <rect x="1120" y="55" width="2" height="2"/><rect x="910" y="150" width="2" height="2"/>
+  </g>
+  <text x="600" y="78" text-anchor="middle" font-family="Verdana,Arial,sans-serif" font-size="48" font-weight="700" fill="#ffeb3b" filter="url(#glow)">SPACE DONKEY</text>
+  <text x="600" y="112" text-anchor="middle" font-family="Verdana,Arial,sans-serif" font-size="19" fill="#7ffcff">DONKEY KONG TO SPACE</text>
+  <path d="M65 255 Q600 95 1135 255" fill="none" stroke="#ff4fd8" stroke-width="8" filter="url(#glow)"/>
+  <path d="M65 255 Q600 95 1135 255" fill="none" stroke="#ffffff" stroke-width="2" opacity=".9"/>
+  <g stroke="#7ffcff" stroke-width="4" fill="none">
+    <path d="M210 214 Q195 290 235 350"/><path d="M365 181 Q345 265 395 337"/>
+    <path d="M520 159 Q500 246 550 326"/><path d="M680 159 Q700 246 650 326"/>
+    <path d="M835 181 Q855 265 805 337"/><path d="M990 214 Q1005 290 965 350"/>
+  </g>
+  <g fill="#ffeb3b" stroke="#111" stroke-width="2">
+    <circle cx="235" cy="350" r="9"/><circle cx="395" cy="337" r="9"/><circle cx="550" cy="326" r="9"/>
+    <circle cx="650" cy="326" r="9"/><circle cx="805" cy="337" r="9"/><circle cx="965" cy="350" r="9"/>
+  </g>
+  <path d="M90 447 Q600 305 1110 447 L1200 520 L0 520 Z" fill="url(#earth)" stroke="#6ce0ff" stroke-width="3"/>
+  <g font-family="Verdana,Arial,sans-serif" fill="#fff" font-size="16" font-weight="700">
+    <text x="170" y="398">GRAB</text><text x="360" y="382">RIDE</text><text x="530" y="370">LET GO</text>
+    <text x="700" y="370">GLIDE</text><text x="870" y="382">GRAB AGAIN</text>
+  </g>
+  <text x="600" y="485" text-anchor="middle" font-family="Courier New,monospace" font-size="16" fill="#fff">ENOUGH SMALL SWINGS → ONE ORBIT</text>
+</svg>
