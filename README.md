@@ -1,174 +1,104 @@
 <p align="center">
-  <img src="assets/space-donkey-hero.svg" alt="SpaceDonkey — Donkey Kong to space" width="100%">
-</p>
-
-<p align="center">
-  <b>DONKEY KONG TO SPACE</b><br>
+  <h1>SPACE DONKEY</h1>
+  <b>DONKEY THIS ASS TO SPACE</b><br>
   A very serious investigation of a very silly geometry.
 </p>
 
 ---
 
-## 🚀 The idea
+## 🚀 The whole idea
 
 Space is not mainly **up**.
 
 Orbit is mostly **sideways, very fast**.
 
-Rockets solve that by carrying an enormous amount of fuel and doing nearly all the work in one ride.
+Rockets get there by carrying their propulsion with them and doing almost all of the work during one launch.
 
-A space elevator tries to solve it with one enormous cable.
+A space elevator tries to replace that with one enormous continuous cable.
 
-**SpaceDonkey asks: what if we use lots of swings instead?**
+**SpaceDonkey asks a dumber question: what if we just keep swinging?**
 
-<p align="center">
-  <img src="assets/donkey-path.svg" alt="Launch, grab a swing, ride, release, coast, grab the next swing, reach orbit" width="95%">
-</p>
+Imagine a continuous structural ring wrapped around Earth at the equator. From that ring hang many powered swings — **Donkeys** — of different lengths, speeds, and phases.
 
-Grab one. Ride it for a while. Let go. Glide, coast, or even dive. Grab the next one.
+A payload reaches one Donkey, rides it for a while, lets go, flies freely, reaches another, and repeats.
 
-Each swing only needs to move you into a state the **next** swing can reach.
+It does not have to keep climbing. It can coast. It can glide. It can even dive if that makes the next handoff easier.
 
-Eventually you let go fast enough that you keep missing Earth.
+Each Donkey only has to leave the payload somewhere the **next** Donkey can reach.
+
+Eventually the payload lets go with enough sideways speed that it keeps missing Earth.
 
 **That's orbit.**
 
 ---
 
-## 🕹️ Donkey Kong already knows the algorithm
+## 🕹️ The video-game version
 
-```mermaid
-flowchart LR
-    A[Launch] --> B[Grab]
-    B --> C[Ride]
-    C --> D[Release]
-    D --> E[Grab again]
-    E --> F[Orbit]
-```
+Picture a gigantic tree whose main branches wrap all the way around Earth's equator.
 
-That is basically the whole front-page explanation.
+Hundreds of vines hang inward toward the planet.
 
-The weird part is that the payload does **not** have to keep going upward.
+Now swing from vine to vine.
 
-Down is allowed.
+Grab. Ride. Release. Fly. Grab the next one.
 
-A release can lead to a glide, coast, or dive if that gives the next swing a better chance to catch you.
+Do that enough times and the last release is not another jump.
+
+**It is orbit.**
+
+The tree is a joke. The geometry is not.
+
+---
+
+## 🌎 The machine hiding inside the joke
+
+The proposed backbone is a **continuous self-supporting equatorial ring**. In the idealized architecture, the ring carries its global gravitational load in compression.
+
+The Donkeys hang inward from that backbone and do the local work. They are not identical pendulums and they do not need to fire the payload upward like a projectile. A payload should approach a moving Donkey with low relative velocity, merge onto it, lock mechanically, ride through a finite acceleration arc, and release into another free-flight leg.
+
+So the system is not an elevator and it is not one heroic skyhook.
+
+It is a **planet-sized sequence of locally manageable moves**.
 
 > **The goal is not to keep climbing. The goal is to keep reaching the next legal move.**
 
 ---
 
-## 🌎 Turn the space elevator upside down
+## 🪢 Why lots of Donkeys?
 
-A normal space elevator hangs one gigantic cable **up from Earth**.
+Because one violent transfer has to be nearly perfect.
 
-SpaceDonkey imagines persistent infrastructure **above Earth**, with many smaller working tethers hanging inward.
+Many smaller transfers may buy **grace**: softer capture, longer interaction time, smaller momentum jumps, alternate routes, and recovery after a missed handoff.
 
-Think less:
+More stages also create more hardware, more failure opportunities, and more control problems. That trade is the research question.
 
-**one impossible ladder**
+SpaceDonkey is not claiming to invent momentum-exchange tethers. Orbital rings, HASTOL, NASA MXER, Sling-on-a-Ring, and multi-stage tether systems are all important prior art.
 
-and more:
+The question is narrower:
 
-**a whole planet wearing monkey bars.**
-
-The equator is especially interesting because Earth is already rotating eastward fastest there, and a circum-Earth backbone gives us room for lots of separate Donkeys.
-
-The backbone itself is an open question. Existing orbital-ring ideas are obvious prior art, but SpaceDonkey does **not** assume we have already solved the global structure.
+> **What happens if we use enough stages that no individual Donkey needs to be heroic?**
 
 ---
 
-## 🪢 Why swings?
+## 🔬 How we find out
 
-Because a swing can buy **time**.
+Not by designing the entire planet first.
 
-A violent one-shot hook says:
+**Build the model of one Donkey.**
 
-> Be at exactly the right place, at exactly the right speed, at exactly the right instant.
+Can it meet a ballistic payload gently, attach, add useful momentum over time, release into a recoverable trajectory, and recharge afterward?
 
-A long swing might instead say:
+If no, kill the idea cheaply.
 
-> Get close enough. Match me gently. Grab on. I will carry you while I add momentum.
+If yes, add **Donkey #2** and ask whether the first release naturally reaches the second capture region.
 
-Longer swings can reduce acceleration for the same tip speed:
+Then keep composing stages until the architecture closes — or physics says no.
 
-\[
-a = \frac{v^2}{r}
-\]
+The ring itself has equally serious kill tests: compressive specific strength, buckling, centering and stability, local Donkey loads, atmospheric interaction, reliability, and the return of the angular momentum given to outbound payloads.
 
-So the lower Donkeys may want to be **long, slow, and forgiving**.
-
-We call that **grace**.
-
-Later Donkeys can be faster after the payload is already much more controlled.
-
----
-
-## ⚡ Where does the energy come from?
-
-Not nowhere.
-
-SpaceDonkey is **not** a perpetual-motion machine.
-
-Every swing that gives the payload momentum must get that momentum from somewhere, and the system has to put it back later.
-
-The attraction is architectural:
-
-- the heavy machinery can stay outside the payload,
-- the same machinery can be reused,
-- energy can be supplied electrically over time,
-- the payload does not need to carry all of its propulsion hardware and reaction mass,
-- inbound traffic might someday return some energy and momentum to the system.
-
-Think **railroad to orbital velocity**, not free energy.
-
----
-
-## 🤔 Has anybody thought of this before?
-
-**A lot of the pieces, yes.** Good. We want to steal the good parts.
-
-Serious prior work includes:
-
-- **Paul Birch's orbital rings** — circum-Earth structures and hanging skyhooks.
-- **HASTOL** — a suborbital vehicle meets a rotating tether and gets carried to a higher-energy trajectory.
-- **NASA MXER** — momentum-exchange tethers that throw payloads and slowly recharge afterward.
-- **Sling-on-a-Ring** — remarkably close visually: rotating slings attached to an equatorial ring.
-- **Multi-stage tether systems** — sequential tether handoffs connected by free-flight trajectories.
-
-SpaceDonkey is **not** claiming to invent space tethers.
-
-The specific question here is:
-
-> **What happens if we use enough small stages that no individual Donkey needs to be heroic?**
-
-Can multiplicity buy softer capture, smaller momentum jumps, more recovery options, and enough **grace** to make the whole route compose?
+No magic materials are assumed. No free energy is assumed. Failure is an acceptable result.
 
 [**→ Read the technical research ledger**](RESEARCH.md)
-
----
-
-## 🔬 What do we actually test first?
-
-Not a 40,000 km ring.
-
-**One Donkey.**
-
-Can one reusable tether:
-
-1. meet a ballistic payload with low relative velocity,
-2. capture it without a huge shock,
-3. accelerate it over a useful arc,
-4. release it into a recoverable free-flight path,
-5. and restore its own lost momentum efficiently?
-
-If no: excellent. We killed the idea cheaply.
-
-If yes: add **Donkey #2**.
-
-Then ask whether the first release naturally falls inside the second Donkey's capture region.
-
-Then keep going until either physics says **no** or Donkey Kong reaches orbit.
 
 ---
 
