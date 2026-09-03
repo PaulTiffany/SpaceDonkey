@@ -1,0 +1,12 @@
+* text=auto eol=lf
+
+*.svg  text
+*.json text
+*.md   text
+*.py   text
+
+*.png binary
+*.jpg binary
+*.pdf binary
+
+docs/figures/*.svg linguist-generated=true
