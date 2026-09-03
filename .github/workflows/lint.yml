@@ -1,0 +1,110 @@
+name: lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  markdown:
+    name: markdown format and lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: prettier --check
+        run: npx --yes prettier@3.3.3 --check "**/*.{md,json,yml,yaml}"
+
+      - name: markdownlint
+        run: npx --yes markdownlint-cli2@0.13.0 "**/*.md" "#node_modules"
+
+  spelling:
+    name: spell check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: cspell
+        run:
+          npx --yes cspell@8.13.1 lint --no-progress --show-suggestions
+          "**/*.{md,py,json}"
+
+  python:
+    name: python lint and types
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: install
+        run: pip install ruff==0.6.9 mypy==1.11.2
+
+      - name: ruff check
+        run: ruff check tools/
+
+      - name: ruff format --check
+        run: ruff format --check tools/
+
+      - name: mypy
+        run: mypy tools/
+
+  figures:
+    name: figures match their parameters
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Figures are generated artifacts. If a committed SVG differs from what
+      # its parameter file produces, the diff is unreviewable and the figure is
+      # no longer trustworthy as documentation. Fail loudly.
+      - name: regenerate and compare
+        run: python tools/figures/ringgen.py --all --check
+
+  svg:
+    name: svg well-formed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: parse every svg
+        run: |
+          python - <<'PY'
+          import pathlib, sys, xml.dom.minidom
+          bad = []
+          for p in pathlib.Path(".").rglob("*.svg"):
+              try:
+                  xml.dom.minidom.parse(str(p))
+              except Exception as exc:
+                  bad.append(f"{p}: {exc}")
+          if bad:
+              print("\n".join(bad), file=sys.stderr)
+              sys.exit(1)
+          print("all svg files parse")
+          PY

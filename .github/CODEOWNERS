@@ -1,0 +1,12 @@
+# Every change to main requires review from a human owner.
+# Pair this with branch protection: Require review from Code Owners.
+# See docs/branch-protection.md.
+
+*                     @PaulTiffany
+
+# Repository controls. Agents are instructed not to touch these; ownership
+# makes that enforceable rather than advisory.
+/.github/             @PaulTiffany
+/CODEOWNERS           @PaulTiffany
+/AGENTS.md            @PaulTiffany
+/CLAUDE.md            @PaulTiffany

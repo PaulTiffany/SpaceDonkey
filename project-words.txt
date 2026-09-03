@@ -1,0 +1,56 @@
+# Project vocabulary. Alphabetical, one per line. Add a word here rather than
+# adding an inline cspell-disable comment.
+
+# project and people
+AlphaClaw
+OmegaClaw
+SpaceDonkey
+ThreadKeeper
+Tiffany
+
+# orbital mechanics and megastructure terms
+apoapsis
+areostationary
+barycentre
+centrifugal
+circumferential
+deorbit
+geostationary
+hypervelocity
+maglev
+megastructure
+periapsis
+skyhook
+stationkeeping
+superconducting
+tether
+tethers
+tetherless
+
+# launch and spaceflight
+aerobraking
+aeroshell
+cislunar
+deltav
+downmass
+exoatmospheric
+launchers
+payloads
+reentry
+upmass
+
+# agent tooling and identifiers
+Aider
+CODEOWNERS
+Codex
+Cursor
+Windsurf
+
+# tooling
+cspell
+lychee
+markdownlint
+prettierignore
+pyproject
+ruff
+venv

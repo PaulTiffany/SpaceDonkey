@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "title": "Equatorial orbital ring schematic",
+    "description": "A planet viewed down the polar axis, encircled by a stationary ring in low orbit. Tethers hang from the ring to equatorial ground anchors. An inner dashed circle marks the mass stream that supports the ring. Ring altitude is exaggerated for legibility.",
+    "output": "docs/figures/orbital-ring-equatorial.svg"
+  },
+  "physical": {
+    "planet_radius_km": 6371,
+    "ring_altitude_km": 300,
+    "tether_count": 6
+  },
+  "canvas": {
+    "width": 680,
+    "height": 600,
+    "padding": 20
+  },
+  "render": {
+    "planet_radius_px": 150,
+    "altitude_exaggeration": 9.2,
+    "mass_stream_offset_px": 12,
+    "tether_phase_deg": 0,
+    "platform_deg": [0, 90, 180, 270],
+    "flow_marker_deg": [45, 225],
+    "stars": [
+      [96, 70, 1.6, 0.6],
+      [612, 96, 2.0, 0.5],
+      [580, 524, 1.5, 0.5],
+      [72, 510, 2.1, 0.45],
+      [628, 300, 1.4, 0.4],
+      [52, 250, 1.7, 0.5]
+    ],
+    "landmasses": [
+      [-50, -50, 46, 30, 0.8],
+      [52, 52, 54, 34, 0.7],
+      [20, -88, 30, 18, 0.6]
+    ]
+  },
+  "colors": {
+    "space": "#0B1220",
+    "planet": "#16324F",
+    "land": "#1E4A6B",
+    "limb": "#5A86B8",
+    "ring": "#E8EDF5",
+    "tether": "#9FB0C8",
+    "accent": "#FF8A3D",
+    "label": "#E8EDF5",
+    "muted": "#9FB0C8",
+    "axis": "#7FA3C9",
+    "leader": "#6B7C99"
+  }
+}

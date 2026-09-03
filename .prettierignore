@@ -1,0 +1,14 @@
+# Generated figures. Owned by tools/figures/ringgen.py; formatting them by hand
+# would put them permanently out of sync with their parameter files.
+docs/figures/*.svg
+
+# Pre-existing files, deliberately left untouched by this pull request.
+# Additive-only: these come under the formatter in a follow-up that is allowed
+# to modify them.
+# Anchored with a leading slash: a bare "README.md" is a gitignore-style
+# pattern that would also swallow docs/figures/README.md, which this pull
+# request adds and does want formatted.
+/README.md
+assets/
+
+LICENSE
