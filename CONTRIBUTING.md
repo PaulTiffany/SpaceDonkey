@@ -51,6 +51,10 @@ vocabulary. When it flags a legitimate term:
   everything nearby and they are invisible in review. One shared dictionary is the
   point.
 - **Check the spelling first.** The list is not a place to enshrine a typo.
+- **This project is US English.** `cspell.json` loads `en_US`, so British forms are
+  spelling errors here, not vocabulary — fix the prose rather than adding `licence`,
+  `generalises` or `organisation` to the dictionary. This is the easiest way to turn the
+  shared list into a silencer without noticing.
 
 ## Figures
 

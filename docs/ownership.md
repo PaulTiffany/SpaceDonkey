@@ -10,10 +10,15 @@ is the thing this document is trying to be.
 
 Declared by Paul, and recorded here rather than restated elsewhere:
 
-| Surface                   | Owner | Purpose                                                                                                                     |
-| ------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------- |
-| `SpaceDonkey.wiki.git`    | Paul  | Fortify and celebrate prior art, distinguish established physics from speculation, teach the history, develop the synthesis |
-| `PaulTiffany/SpaceDonkey` | Derek | Executable evidence: code, parameters, generated figures, CI, contributor mechanics                                         |
+| Surface                       | Owner | Purpose                                                                                                                     |
+| ----------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------- |
+| `SpaceDonkey.wiki.git`        | Paul  | Fortify and celebrate prior art, distinguish established physics from speculation, teach the history, develop the synthesis |
+| `Tiffany-Studios/SpaceDonkey` | Derek | Executable evidence: code, parameters, generated figures, CI, contributor mechanics                                         |
+
+The repository moved from `PaulTiffany/SpaceDonkey` to the `Tiffany-Studios`
+organization after this document was written. GitHub redirects the old paths, so
+existing links and clones keep working, but new references should use the organization
+path.
 
 The boundary binds agents, not only people, and it binds in both directions:
 
@@ -126,14 +131,14 @@ wearing a CI badge.
    `docs/figures/README.md` is half mechanics ("run this to regenerate") and half
    argument about the world ("diffusion models have no representation of an orbital
    radius"). By the rule above, the argument belongs in the wiki.
-2. **`CODEOWNERS` now contradicts the declared boundary.** It assigns `*` to
-   @PaulTiffany, which combined with required Code Owner review means every change to
-   the surface Derek owns needs Paul's approval. This was ambiguous when the file was
-   written and is not any more. Deliberately not changed unilaterally in the pull
-   request that introduced it — it needs Paul's confirmation and Derek's handle.
+2. ~~**`CODEOWNERS` contradicts the declared boundary.**~~ Resolved. `*` is now
+   @derektiffany; the repository-controls block (`/.github/`, `AGENTS.md`, `CLAUDE.md`)
+   stays with @PaulTiffany, which means changing who owns what still requires his
+   review. Open sub-question: with the repository now in an organization, these could be
+   teams rather than individuals, which survives people changing roles.
 3. **The wiki is unlicensed.** See [`branch-protection.md`](branch-protection.md).
    Sharper now that the wiki is the declared home of prior art: a surface whose stated
-   purpose is to fortify and credit other people's work carries no licence granting
+   purpose is to fortify and credit other people's work carries no license granting
    anyone the same courtesy.
 4. **Figures cross the boundary.** They are generated here and displayed on wiki pages.
    The rule is that the wiki embeds by URL and never keeps a copy, so the figure has one

@@ -1,12 +1,21 @@
 # Every change to main requires review from a human owner.
 # Pair this with branch protection: Require review from Code Owners.
-# See docs/branch-protection.md.
+# See docs/branch-protection.md and docs/ownership.md.
 
-*                     @PaulTiffany
+# The repository is Derek's declared surface, so he owns it by default. This
+# was @PaulTiffany when the file was written, before the boundary in
+# docs/ownership.md existed; leaving it that way meant every change to the
+# surface Derek maintains needed Paul's approval.
+*                     @derektiffany
 
-# Repository controls. Agents are instructed not to touch these; ownership
-# makes that enforceable rather than advisory.
+# Repository controls stay with Paul. Agents are instructed not to touch these;
+# ownership makes that enforceable rather than advisory. Note this covers
+# .github/CODEOWNERS itself, so changing who owns what still needs Paul.
+#
+# The previous version also listed /CODEOWNERS, which matched a root-level file
+# that does not exist — this file lives at .github/CODEOWNERS and is already
+# covered by the /.github/ rule below. Removed rather than left as a rule that
+# looked like a control and was not one.
 /.github/             @PaulTiffany
-/CODEOWNERS           @PaulTiffany
 /AGENTS.md            @PaulTiffany
 /CLAUDE.md            @PaulTiffany
