@@ -1,0 +1,26 @@
+name: Delete stale SpaceDonkey branches once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/delete-stale-branches-once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete obsolete branches
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git init cleanup
+          cd cleanup
+          git remote add origin "$remote"
+          git push origin --delete wiki-migration || true
+          git push origin --delete chore/ci-and-figure-pipeline || true
