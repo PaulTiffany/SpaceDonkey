@@ -48,11 +48,12 @@ Delete any heading you do not need.
 
 ### Three surfaces, three standards
 
-Separate doors, not a sequence. Nothing has to pass through one to reach another.
+Separate doors, not a sequence. Work may begin in an issue, directly in the wiki, or
+directly in a pull request. Nothing has to pass through one to reach another.
 
 | Surface | What it is                                     |
 | ------- | ---------------------------------------------- |
-| Issues  | The public intake surface                      |
+| Issues  | An optional coordination and task surface      |
 | Wiki    | The directly published human synthesis surface |
 | `main`  | The mechanically reviewed executable record    |
 

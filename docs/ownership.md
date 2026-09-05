@@ -37,14 +37,14 @@ Every GitHub surface gets a declared function before it is used.
 The point is to decide what a surface is _for_ before its affordances decide for us. A
 tool adopted because it was there tends to reshape the process around itself.
 
-| Surface       | Declared function                        | Gate available           |
-| ------------- | ---------------------------------------- | ------------------------ |
-| Repository    | Executable evidence                      | Pull request, CI, owners |
-| Wiki          | Current model of the architecture        | None                     |
-| Pull requests | The human gate                           | `pr-policy`              |
-| Actions       | Predetermined mechanical checks only     | —                        |
-| Issues        | Public intake: questions, reports, ideas | —                        |
-| Releases      | Frozen research checkpoints              | —                        |
+| Surface       | Declared function                    | Gate available           |
+| ------------- | ------------------------------------ | ------------------------ |
+| Repository    | Executable evidence                  | Pull request, CI, owners |
+| Wiki          | Current model of the architecture    | None                     |
+| Pull requests | The human gate                       | `pr-policy`              |
+| Actions       | Predetermined mechanical checks only | —                        |
+| Issues        | Optional coordination and tasks      | —                        |
+| Releases      | Frozen research checkpoints          | —                        |
 
 | Projects | Private planning and prioritization | — |
 
@@ -55,9 +55,15 @@ working, not an oversight.
 was written, before the surface had been used.** Held to literally, that excludes a
 broken build, a figure that misrepresents something, and a newcomer saying "this looks
 wrong to me" — all of which belong somewhere, and none of which belong in the wiki or in
-a pull request. The declared function is therefore widened to public intake. Kill tests
-remain the most valuable thing an issue can carry; they are no longer the only thing it
-may.
+a pull request. The declared function is therefore widened to optional coordination and
+tasks. Kill tests remain the most valuable thing an issue can carry; they are no longer
+the only thing it may.
+
+Deliberately **not** called an intake surface. That phrasing was proposed in review and
+then withdrawn by its author, because calling Issues the intake makes them
+architecturally upstream of wiki edits and pull requests — a precedence this project
+does not want. Work may start in an issue, in the wiki, or in a pull request. Governance
+discussion may happen in issues without making issues a governance gate.
 
 **Projects was declared out of use, and then used.** A board now exists and holds
 sixteen cards. Declaring it after the fact is the weaker order and is noted as such. Its
