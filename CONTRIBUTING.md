@@ -29,18 +29,36 @@ anyone can regenerate a figure without setting up an environment.
 
 ## Opening an issue
 
-Issues are public and anyone with a GitHub account can open one. There is no gate, no
-review and no approval — that is deliberate. This is the ungated end of the project, and
-the wiki and the reviewed record are the gated ends.
+Issues are public. Anyone with a GitHub account can open one — no review, no approval,
+no standard of authorship. That is deliberate.
+
+**An issue is never required.** Not before editing the wiki, not before opening a pull
+request.
+
+Some of us use issues as a personal planning surface: a to-do list kept with the project
+rather than beside a desk, and the place where a few ideas out of very many get chosen
+to act on. That is a working habit, not a rule. It is also part of why issues cannot be
+a shared obligation — a surface that doubles as somebody's private ordering of their own
+ideas is not a gate anyone else should have to pass through.
 
 You do not need to be technical, and you do not need to be right. "This looks wrong to
-me" is a complete report. Three templates exist to give a shape — **Idea or claim**,
+me" is a complete report. Three templates give a shape — **Idea or claim**,
 **Question**, **Problem** — and a blank issue is always available if none of them fit.
 Delete any heading you do not need.
 
-**Issues are intake. The wiki is synthesis.** An issue thread gets longer; a wiki page
-gets better. So when a question turns out to have an interesting answer, the answer
-belongs on a wiki page afterwards, and the issue is where it got worked out.
+### Three surfaces, three standards
+
+Separate doors, not a sequence. Nothing has to pass through one to reach another.
+
+| Surface    | Who writes                               | What it carries             |
+| ---------- | ---------------------------------------- | --------------------------- |
+| Wiki       | Humans, exercising editorial authority   | Prose, prior art, arguments |
+| Issues     | Anyone, machines included                | Questions, reports, ideas   |
+| Repository | Anyone proposes; a second human approves | The reviewed record         |
+
+Issues being the ungated surface is exactly why they cannot stand in front of the
+others: routing a wiki contribution through a channel with no authorship standard would
+defeat the standard.
 
 ### Labels
 
