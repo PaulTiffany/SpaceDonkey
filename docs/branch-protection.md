@@ -15,27 +15,35 @@ Two things are actual controls:
 1. **GitHub refuses to merge a draft pull request.** This is enforced by the platform.
    It is why agents are instructed to open as drafts — the stop is mechanical, not an
    honour system.
-2. **Branch protection requiring a CODEOWNERS review.** A pull request cannot merge
-   without an approving review from a human owner, regardless of what the body claims.
+2. **The ruleset on `main` requiring an approving review.** A pull request cannot merge
+   without one, regardless of what the body claims. GitHub does not let an author
+   approve their own pull request, so this is what makes "two humans" real rather than
+   attested.
+
+`CODEOWNERS` is not on that list. It auto-requests a review from the owner, which is a
+notification, not a gate. It only becomes a control if "require review from Code Owners"
+is switched on, and it deliberately is not — see below.
 
 Everything else is process hygiene. Useful, but do not mistake it for a lock.
 
-## Recommended ruleset for `main`
+## The ruleset on `main`
 
-Target branch: `main`
+Configured 2026-09-04. Target branch: `main`. This section records what is actually set,
+not a proposal — edit it if you change the settings, or the two will drift.
 
-| Setting                                | Value | Why                                                                                               |
-| -------------------------------------- | ----- | ------------------------------------------------------------------------------------------------- |
-| Require a pull request before merging  | on    | No direct pushes to the reviewed record                                                           |
-| Required approvals                     | 1     | The human gate                                                                                    |
-| Require review from Code Owners        | on    | Makes `CODEOWNERS` binding                                                                        |
-| Dismiss stale approvals on new commits | on    | An approval covers the diff that was read, not later additions                                    |
-| Require conversation resolution        | on    | Review comments cannot be silently ignored                                                        |
-| Require status checks to pass          | on    | See list below                                                                                    |
-| Require branches to be up to date      | on    | Checks ran against what will actually land                                                        |
-| Block force pushes                     | on    | History on `main` is a record                                                                     |
-| Restrict deletions                     | on    |                                                                                                   |
-| Do not allow bypassing the above       | on    | Including for administrators. The point of a gate you set for yourself is that it applies to you. |
+| Setting                                 | Value | Why                                                                                             |
+| --------------------------------------- | ----- | ----------------------------------------------------------------------------------------------- |
+| Require a pull request before merging   | on    | No direct pushes to the reviewed record                                                         |
+| Required approvals                      | 1     | The human gate                                                                                  |
+| Require review from Code Owners         | off   | Deliberate. `*` is @PaulTiffany, so `on` would make him a required reviewer on every change     |
+| Dismiss stale approvals on new commits  | on    | An approval covers the diff that was read, not later additions                                  |
+| Require conversation resolution         | on    | Review comments cannot be silently ignored                                                      |
+| Require status checks to pass           | on    | See list below                                                                                  |
+| Require branches to be up to date       | on    | Checks ran against what will actually land                                                      |
+| Block force pushes                      | on    | History on `main` is a record                                                                   |
+| Restrict deletions                      | on    |                                                                                                 |
+| Repository admins may bypass            | on    | Deliberate. Two maintainers, one non-technical; an override exists for when one is unavailable  |
+| Extra approval for unattributed commits | on    | GitHub default. A commit whose author email is not linked to an account needs a second approval |
 
 ### Required status checks
 

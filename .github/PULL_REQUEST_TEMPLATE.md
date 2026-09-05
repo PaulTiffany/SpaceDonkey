@@ -1,6 +1,11 @@
 ## What this changes
 
-<!-- One or two sentences. -->
+<!--
+One or two sentences. Keep the whole body short: the checkboxes below carry the
+mechanical load, and a reviewer who is not a programmer has to be able to read this.
+Say what changed, what you deliberately left out, and what you are unsure about.
+Do not restate the diff.
+-->
 
 ## Type
 
