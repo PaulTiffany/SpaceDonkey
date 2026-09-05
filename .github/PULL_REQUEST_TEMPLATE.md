@@ -1,6 +1,11 @@
 ## What this changes
 
-<!-- One or two sentences. -->
+<!--
+One or two sentences. Keep the whole body short: the checkboxes below carry the
+mechanical load, and a reviewer who is not a programmer has to be able to read this.
+Say what changed, what you deliberately left out, and what you are unsure about.
+Do not restate the diff.
+-->
 
 ## Type
 
@@ -27,6 +32,19 @@ the diff, and an agent ticking it makes the artifact a lie. Leave the pull reque
 draft; a human will read the changes, tick the box, and promote it to ready for review.
 
 - [ ] I have reviewed my own changes.
+
+## Override
+
+Leave this alone unless you relaxed a branch rule to land this pull request. `main`
+normally requires a pull request, one approving review, and green checks, and nobody —
+including administrators — can bypass that without turning enforcement off.
+
+- [ ] I relaxed a rule on `main` to merge this.
+
+If ticked, say which rule, which of the reasons in
+[`docs/branch-protection.md`](../docs/branch-protection.md) applied, and confirm
+enforcement is back on. The audit log records that the ruleset changed; it does not
+record why.
 
 ## Checks
 
