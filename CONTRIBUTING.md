@@ -50,11 +50,15 @@ Delete any heading you do not need.
 
 Separate doors, not a sequence. Nothing has to pass through one to reach another.
 
-| Surface    | Who writes                               | What it carries             |
-| ---------- | ---------------------------------------- | --------------------------- |
-| Wiki       | Humans, exercising editorial authority   | Prose, prior art, arguments |
-| Issues     | Anyone, machines included                | Questions, reports, ideas   |
-| Repository | Anyone proposes; a second human approves | The reviewed record         |
+| Surface | What it is                                     |
+| ------- | ---------------------------------------------- |
+| Issues  | The public intake surface                      |
+| Wiki    | The directly published human synthesis surface |
+| `main`  | The mechanically reviewed executable record    |
+
+The wiki's gate is human authorship and editorial authority — a property of the
+contributor, not a process they completed. `main`'s gate is mechanical. Issues have
+neither.
 
 Issues being the ungated surface is exactly why they cannot stand in front of the
 others: routing a wiki contribution through a channel with no authorship standard would
@@ -62,8 +66,9 @@ defeat the standard.
 
 ### Labels
 
-Alongside GitHub's defaults, the labels below carry meaning here. Anyone may apply them,
-including agents:
+Alongside GitHub's defaults, the labels below carry meaning here. People or agents with
+appropriate repository permission may apply them. **A label requests work; it does not
+grant an agent authority to act, or to write to the wiki.**
 
 | Label            | Means                                         |
 | ---------------- | --------------------------------------------- |
@@ -79,9 +84,11 @@ up, without either having to guess. They are requests, not judgments.
 
 These labels were created by an agent session — Claude Code,
 [session record](https://claude.ai/code/session_01AvwZT6wQHRwjp9vDNc7DAJ) — at
-@derektiffany's direction, in the same pull request that added the templates. Labels are
-repository settings rather than files, so this table is the only place the set is
-recorded. Change one here if you change it there.
+@derektiffany's direction, and were already live before this table existed. Labels are
+repository settings rather than files, so what follows is the **reviewed declaration of
+the intended taxonomy**, not a record of how it came to be. The settings were mutated
+outside the gate and described inside it; that is the weaker order, and the same order
+the `main` ruleset was configured in. Change this table if you change the settings.
 
 ## Before you open a pull request
 
