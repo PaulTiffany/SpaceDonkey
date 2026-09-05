@@ -78,6 +78,7 @@ grant an agent authority to act, or to write to the wiki.**
 | `needs-model`    | Wants to be computed rather than asserted     |
 | `wiki`           | Concerns the wiki surface                     |
 | `repo`           | Concerns this repository                      |
+| `chore`          | Maintenance: dependencies, link rot, cleanup  |
 
 The three `needs-` labels exist so a machine can hand work back to a human, or pick it
 up, without either having to guess. They are requests, not judgments.
@@ -192,9 +193,13 @@ persistence or context between agent sessions is an intended workflow.
 ### What the gate actually is
 
 Be clear-eyed: a checkbox is an attestation, not a control. The real controls are GitHub
-refusing to merge drafts, and branch protection requiring a CODEOWNERS review. See
-[`docs/branch-protection.md`](docs/branch-protection.md) for the settings, which have to
-be configured by hand.
+refusing to merge drafts, and the ruleset on `main` requiring an approving review —
+which an author cannot give themselves, so it takes two humans. Nobody bypasses it,
+administrators included.
+
+Code Owners review is deliberately **off**, so `CODEOWNERS` is a notification rather
+than a gate. See [`docs/branch-protection.md`](docs/branch-protection.md) for the
+settings as configured, and for the break-glass route.
 
 ### Attribution in commits
 

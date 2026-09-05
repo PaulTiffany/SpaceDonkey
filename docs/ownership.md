@@ -142,11 +142,12 @@ wearing a CI badge.
    `docs/figures/README.md` is half mechanics ("run this to regenerate") and half
    argument about the world ("diffusion models have no representation of an orbital
    radius"). By the rule above, the argument belongs in the wiki.
-2. **`CODEOWNERS` now contradicts the declared boundary.** It assigns `*` to
-   @PaulTiffany, which combined with required Code Owner review means every change to
-   the surface Derek owns needs Paul's approval. This was ambiguous when the file was
-   written and is not any more. Deliberately not changed unilaterally in the pull
-   request that introduced it — it needs Paul's confirmation and Derek's handle.
+2. **`CODEOWNERS` still contradicts the declared boundary, but no longer bites.** It
+   assigns `*` to @PaulTiffany while the repository is the surface Derek maintains. That
+   would mean every change needed Paul's approval — except Code Owners review is
+   deliberately off in the ruleset, so the entry only auto-requests a review. The
+   contradiction is now inert rather than resolved, and resolving it properly still
+   needs Paul's confirmation and Derek's handle.
 3. **The wiki is unlicensed.** See [`branch-protection.md`](branch-protection.md).
    Sharper now that the wiki is the declared home of prior art: a surface whose stated
    purpose is to fortify and credit other people's work carries no license granting
