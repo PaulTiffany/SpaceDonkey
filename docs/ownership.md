@@ -37,17 +37,39 @@ Every GitHub surface gets a declared function before it is used.
 The point is to decide what a surface is _for_ before its affordances decide for us. A
 tool adopted because it was there tends to reshape the process around itself.
 
-| Surface       | Declared function                         | Gate available           |
-| ------------- | ----------------------------------------- | ------------------------ |
-| Repository    | Executable evidence                       | Pull request, CI, owners |
-| Wiki          | Current model of the architecture         | None                     |
-| Pull requests | The human gate                            | `pr-policy`              |
-| Actions       | Predetermined mechanical checks only      | —                        |
-| Issues        | Falsifiable open questions and kill tests | —                        |
-| Releases      | Frozen research checkpoints               | —                        |
+| Surface       | Declared function                    | Gate available           |
+| ------------- | ------------------------------------ | ------------------------ |
+| Repository    | Executable evidence                  | Pull request, CI, owners |
+| Wiki          | Current model of the architecture    | None                     |
+| Pull requests | The human gate                       | `pr-policy`              |
+| Actions       | Predetermined mechanical checks only | —                        |
+| Issues        | Optional coordination and tasks      | —                        |
+| Releases      | Frozen research checkpoints          | —                        |
 
-Discussions and Projects have no declared function and are therefore not in use. That is
-the rule working, not an oversight.
+| Projects | Private planning and prioritization | — |
+
+Discussions have no declared function and are therefore not in use. That is the rule
+working, not an oversight.
+
+**Issues were narrowed to "falsifiable open questions and kill tests" when this table
+was written, before the surface had been used.** Held to literally, that excludes a
+broken build, a figure that misrepresents something, and a newcomer saying "this looks
+wrong to me" — all of which belong somewhere, and none of which belong in the wiki or in
+a pull request. The declared function is therefore widened to optional coordination and
+tasks. Kill tests remain the most valuable thing an issue can carry; they are no longer
+the only thing it may.
+
+Deliberately **not** called an intake surface. That phrasing was proposed in review and
+then withdrawn by its author, because calling Issues the intake makes them
+architecturally upstream of wiki edits and pull requests — a precedence this project
+does not want. Work may start in an issue, in the wiki, or in a pull request. Governance
+discussion may happen in issues without making issues a governance gate.
+
+**Projects was declared out of use, and then used.** A board now exists and holds
+sixteen cards. Declaring it after the fact is the weaker order and is noted as such. Its
+function is private planning and prioritization: the place where many possible ideas get
+reduced to the few worth acting on. It is deliberately not a gate — nothing has to
+appear on it, and it stands in front of nothing.
 
 ## Single source of truth
 
@@ -126,11 +148,12 @@ wearing a CI badge.
    `docs/figures/README.md` is half mechanics ("run this to regenerate") and half
    argument about the world ("diffusion models have no representation of an orbital
    radius"). By the rule above, the argument belongs in the wiki.
-2. **`CODEOWNERS` now contradicts the declared boundary.** It assigns `*` to
-   @PaulTiffany, which combined with required Code Owner review means every change to
-   the surface Derek owns needs Paul's approval. This was ambiguous when the file was
-   written and is not any more. Deliberately not changed unilaterally in the pull
-   request that introduced it — it needs Paul's confirmation and Derek's handle.
+2. **`CODEOWNERS` still contradicts the declared boundary, but no longer bites.** It
+   assigns `*` to @PaulTiffany while the repository is the surface Derek maintains. That
+   would mean every change needed Paul's approval — except Code Owners review is
+   deliberately off in the ruleset, so the entry only auto-requests a review. The
+   contradiction is now inert rather than resolved, and resolving it properly still
+   needs Paul's confirmation and Derek's handle.
 3. **The wiki is unlicensed.** See [`branch-protection.md`](branch-protection.md).
    Sharper now that the wiki is the declared home of prior art: a surface whose stated
    purpose is to fortify and credit other people's work carries no license granting
