@@ -33,6 +33,19 @@ draft; a human will read the changes, tick the box, and promote it to ready for 
 
 - [ ] I have reviewed my own changes.
 
+## Override
+
+Leave this alone unless you relaxed a branch rule to land this pull request. `main`
+normally requires a pull request, one approving review, and green checks, and nobody —
+including administrators — can bypass that without turning enforcement off.
+
+- [ ] I relaxed a rule on `main` to merge this.
+
+If ticked, say which rule, which of the reasons in
+[`docs/branch-protection.md`](../docs/branch-protection.md) applied, and confirm
+enforcement is back on. The audit log records that the ruleset changed; it does not
+record why.
+
 ## Checks
 
 - [ ] `npx prettier@3.3.3 --write "**/*.{md,json,yml,yaml}"` run locally

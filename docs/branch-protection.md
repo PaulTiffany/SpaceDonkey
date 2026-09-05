@@ -42,8 +42,40 @@ not a proposal — edit it if you change the settings, or the two will drift.
 | Require branches to be up to date       | on    | Checks ran against what will actually land                                                      |
 | Block force pushes                      | on    | History on `main` is a record                                                                   |
 | Restrict deletions                      | on    |                                                                                                 |
-| Repository admins may bypass            | on    | Deliberate. Two maintainers, one non-technical; an override exists for when one is unavailable  |
+| Anyone may bypass                       | off   | Nobody, admins included. See **Break glass** below                                              |
 | Extra approval for unattributed commits | on    | GitHub default. A commit whose author email is not linked to an account needs a second approval |
+
+### Break glass
+
+There is **no standing bypass**. This is deliberate, and it is not only about
+discipline: agents run with a maintainer's credential, and GitHub cannot tell an agent
+holding that credential apart from the human it belongs to. A standing admin bypass is
+therefore a standing agent bypass, which would make the gate inapplicable to the party
+most likely to test it. Paul raised this on #6 and he was right.
+
+So an override is not a click. It is a human editing this ruleset in **Settings →
+Rules**, setting enforcement to `Disabled` or `Evaluate`, doing the thing, and putting
+it back. That is deliberate, visible, and recorded in the organization audit log, which
+is the point — the cost of an override should be that someone notices.
+
+**When it is legitimate.** The test is that the cost of waiting for review exceeds the
+cost of merging unreviewed. In practice:
+
+1. **A secret or credential reached `main`.** Remove it now; rotate afterwards.
+2. **Defacement, spam or malicious content on `main`.**
+3. **A legal, licensing or takedown demand** with a deadline shorter than a review
+   cycle.
+4. **Runaway automation** — a workflow or agent burning resources or spamming, where
+   landing a change is what stops it.
+
+Two maintainers means one of them is sometimes asleep. That is a reason the route
+exists; it is not by itself a reason to use it. "Nobody is around and I want this
+merged" is not on the list.
+
+**Whoever overrides writes it down** in the pull request description, in the Override
+section of the template: which rule was relaxed, which of the reasons above applied, and
+when enforcement went back on. The audit log records that the ruleset changed. It does
+not record why, and the why is the part a human needs later.
 
 ### Required status checks
 

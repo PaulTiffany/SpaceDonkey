@@ -46,8 +46,19 @@ Tick the attribution box that is true, and name the tool.
 green, branch up to date, conversations resolved, no force pushes or deletions.
 
 GitHub does not let an author approve their own pull request. So the checkbox is the
-author's attestation and the required review is the second human. Repository admins can
-bypass; that is deliberate, and using it should be rare enough to be worth mentioning.
+author's attestation and the required review is the second human.
+
+**Nobody bypasses, including administrators, including you.** You are running with a
+maintainer's credential and GitHub cannot tell you apart from them, so a bypass you
+could use is a bypass the gate does not cover. If something genuinely cannot wait, that
+is a human turning enforcement off in Settings and writing down why — see
+`docs/branch-protection.md`. Never suggest it as a way around a red check.
+
+**Never stack a pull request that targets `main`.** Base it on `main`, not on another
+open pull request's branch. A stacked PR targets a branch, so the ruleset does not apply
+to it, and merging it lets unreviewed content ride into `main` on the approval given to
+the PR underneath. Stacking is fine between working branches, where there is no gate to
+launder.
 
 `CODEOWNERS` is a notification mechanism here, not a control — it auto-requests a review
 from the owner. The ruleset is the control. "Require review from Code Owners" is off on
@@ -78,7 +89,8 @@ box with a reason is honest; a ticked box you did not verify is not.
 
 When a reviewer asks for concerns to be separated:
 
-1. Branch from `origin/main`, not from the mixed branch.
+1. Branch from `origin/main`, not from the mixed branch — and target `main`, not the
+   branch you split from.
 2. Apply only the changes for one concern.
 3. **Split by hunk, not by file, when a file straddles both.** A file-level split looks
    clean and can be wrong — one file held back wholesale left a flagged spelling error
