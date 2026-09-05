@@ -133,7 +133,7 @@ wearing a CI badge.
    request that introduced it — it needs Paul's confirmation and Derek's handle.
 3. **The wiki is unlicensed.** See [`branch-protection.md`](branch-protection.md).
    Sharper now that the wiki is the declared home of prior art: a surface whose stated
-   purpose is to fortify and credit other people's work carries no licence granting
+   purpose is to fortify and credit other people's work carries no license granting
    anyone the same courtesy.
 4. **Figures cross the boundary.** They are generated here and displayed on wiki pages.
    The rule is that the wiki embeds by URL and never keeps a copy, so the figure has one

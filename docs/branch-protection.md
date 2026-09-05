@@ -78,7 +78,7 @@ research. See [`ownership.md`](ownership.md) for where that decision is being ma
 
 One consequence worth acting on regardless of that decision: the repository `LICENSE`
 grants CC BY 4.0 over material **"in this repository."** The wiki is not this
-repository, and no wiki page carries a licence notice of its own. Until one is added,
+repository, and no wiki page carries a license notice of its own. Until one is added,
 the wiki content is unlicensed by default — all rights reserved — which is the opposite
 of the intent expressed here.
 

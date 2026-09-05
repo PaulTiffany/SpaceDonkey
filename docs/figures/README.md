@@ -104,7 +104,7 @@ Explicitly, what the current figure does **not** establish:
 - Nothing here has been checked against a physical model. The parameters are render
   inputs, not engineering outputs.
 
-A note on that second-to-last point, because it generalises. The figure was
+A note on that second-to-last point, because it generalizes. The figure was
 geometrically correct, its labels pointed at real elements, and it still taught the
 wrong mechanism to someone who knows this material. That is a third failure mode,
 distinct from the two above: not a halo, not a fabricated infographic, but an accurate

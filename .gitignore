@@ -5,3 +5,5 @@ venv/
 node_modules/
 .DS_Store
 lychee/
+.scratch/
+.claude/settings.local.json
