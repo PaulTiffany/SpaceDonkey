@@ -54,3 +54,11 @@ prettierignore
 pyproject
 ruff
 venv
+
+# research process and epistemics
+affordances
+uncited
+ungated
+
+# fonts named in figure output
+Segoe
