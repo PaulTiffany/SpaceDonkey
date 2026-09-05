@@ -27,6 +27,44 @@ python tools/figures/ringgen.py --all --check
 `ringgen.py` itself needs no dependencies. It is standard library only, by design, so
 anyone can regenerate a figure without setting up an environment.
 
+## Opening an issue
+
+Issues are public and anyone with a GitHub account can open one. There is no gate, no
+review and no approval — that is deliberate. This is the ungated end of the project, and
+the wiki and the reviewed record are the gated ends.
+
+You do not need to be technical, and you do not need to be right. "This looks wrong to
+me" is a complete report. Three templates exist to give a shape — **Idea or claim**,
+**Question**, **Problem** — and a blank issue is always available if none of them fit.
+Delete any heading you do not need.
+
+**Issues are intake. The wiki is synthesis.** An issue thread gets longer; a wiki page
+gets better. So when a question turns out to have an interesting answer, the answer
+belongs on a wiki page afterwards, and the issue is where it got worked out.
+
+### Labels
+
+Alongside GitHub's defaults, the labels below carry meaning here. Anyone may apply them,
+including agents:
+
+| Label            | Means                                         |
+| ---------------- | --------------------------------------------- |
+| `idea`           | A proposal or claim worth exploring           |
+| `needs-citation` | A claim is asserted without a source          |
+| `needs-check`    | Wants a skeptical read before it is relied on |
+| `needs-model`    | Wants to be computed rather than asserted     |
+| `wiki`           | Concerns the wiki surface                     |
+| `repo`           | Concerns this repository                      |
+
+The three `needs-` labels exist so a machine can hand work back to a human, or pick it
+up, without either having to guess. They are requests, not judgments.
+
+These labels were created by an agent session — Claude Code,
+[session record](https://claude.ai/code/session_01AvwZT6wQHRwjp9vDNc7DAJ) — at
+@derektiffany's direction, in the same pull request that added the templates. Labels are
+repository settings rather than files, so this table is the only place the set is
+recorded. Change one here if you change it there.
+
 ## Before you open a pull request
 
 Run the formatter, then the checks:
