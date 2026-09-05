@@ -33,12 +33,12 @@ not a proposal — edit it if you change the settings, or the two will drift.
 
 **Who configured it.** These settings were applied by an agent session — Claude Code,
 [session record](https://claude.ai/code/session_01AvwZT6wQHRwjp9vDNc7DAJ) — acting with
-a maintainer's credential at Derek's direction. The organization audit log attributes
-them to that maintainer's account, because GitHub cannot distinguish an agent holding a
-credential from the person it belongs to. That is the same limitation that removed the
-bypass below, and it is recorded here because the reviewed record is the only place the
-difference can actually be stated. Anyone changing this ruleset should say here who did
-it and how.
+a maintainer's credential at @derektiffany's direction. The organization audit log
+attributes them to that maintainer's account, because GitHub cannot distinguish an agent
+holding a credential from the person it belongs to. That is the same limitation that
+removed the bypass below, and it is recorded here because the reviewed record is the
+only place the difference can actually be stated. Anyone changing this ruleset should
+say here who did it and how.
 
 | Setting                                 | Value | Why                                                                                             |
 | --------------------------------------- | ----- | ----------------------------------------------------------------------------------------------- |

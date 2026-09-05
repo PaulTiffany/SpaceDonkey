@@ -13,10 +13,11 @@ actually gone wrong.
 **The checkboxes do the mechanical work. The prose does not.** Aim for something that
 fits on one screen.
 
-Paul reviews these and is not a programmer — he was a contracts administrator. A long
-body does not make a change more reviewable, it makes it less likely to be read. He has
-asked for PRs to stay approachable, and for best-practice ceremony not to take over the
-repository.
+Write for an educated layman. A reviewer here may not be a programmer, and a long body
+does not make a change more reviewable — it makes it less likely to be read. The ask
+from review has been explicit: keep pull requests legible to a non-specialist, and keep
+best-practice ceremony from taking over the repository. Legibility is also what makes
+the record good provenance later.
 
 What earns its place in the body:
 
@@ -78,9 +79,10 @@ python3 tools/figures/ringgen.py --all --check
 uvx ruff check tools/ && uvx ruff format --check tools/ && uvx mypy tools/
 ```
 
-On this machine `python`, `ruff` and `mypy` are not on `PATH` — use `python3` and `uvx`.
-A "command not found" here is a missing tool, not a failing check; do not report it as
-either passing or failing.
+`python`, `ruff` and `mypy` are often not on `PATH`; `python3` and `uvx` are the
+reliable forms, which is why they are written that way above. Environments differ, so
+check rather than assume. A "command not found" is a missing tool, not a failing check —
+do not report it as either passing or failing, and say which checks you could not run.
 
 If a check is genuinely not applicable, leave the box unticked and say why. An unticked
 box with a reason is honest; a ticked box you did not verify is not.
@@ -110,8 +112,10 @@ When a reviewer asks for concerns to be separated:
 
 - **US English.** `cspell.json` loads `en_US`. British spellings are errors here, not
   vocabulary — fix the prose rather than growing the dictionary.
-- **Commit identity is personal**: `derektiffany@live.com`, set repo-locally. The global
-  git config points at a work address.
+- **Check the commit identity before the first commit of a session.** This repository
+  sets `user.email` locally, and the global git config may point somewhere else
+  entirely. `git config --local --get user.email` — if it comes back empty, stop and
+  ask. Do not guess an address, and do not write anyone's address into the repository.
 - **State claims and non-claims** for anything technical. An estimate is not a result.
 - Never bundle a governance, workflow, or repository-settings change with a mechanical
   one. That is what caused the split above.
